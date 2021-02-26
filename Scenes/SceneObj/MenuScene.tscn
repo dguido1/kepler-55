@@ -52,7 +52,7 @@ texture = ExtResource( 6 )
 margin_right = 330.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.992157, 1, 0.862745, 1 )
+custom_colors/font_color = Color( 0.913725, 0.180392, 0.180392, 1 )
 text = "Space Shooter"
 align = 1
 
