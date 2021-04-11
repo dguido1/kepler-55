@@ -8,6 +8,8 @@ export (PackedScene) var BulletScene
 #Bullet Additions
 var plBullet := preload("res://Bullet/Scenes/Bullet.tscn")
 onready var firingPositions := $FiringPositions
+onready var fireDelayTimer := $FireDelayTimer
+export var fireDelay: float = 0.1
 
 var _screen_size = Vector2(640.0, 360.0)
 var _player_effect = 0
@@ -22,10 +24,9 @@ func _ready():
 	_screen_size = get_viewport_rect().size
 
 func _on_attack():
-		# Check if shooting
-	if Input.is_action_pressed("fire"):
-	#and fireDelayTimer.is_stopped():
-		#fireDelayTimer.start(fireDelay)
+	# Check if shooting
+	if Input.is_action_pressed("fire") and fireDelayTimer.is_stopped():
+		fireDelayTimer.start(fireDelay)
 		for child in firingPositions.get_children():
 			var bullet := plBullet.instance()
 			bullet.global_position = child.global_position
