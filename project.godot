@@ -8,21 +8,43 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scripts/Player.gd"
+}, {
+"base": "HBoxContainer",
+"class": "ScoreRow",
+"language": "GDScript",
+"path": "res://interface/ScoreRow.gd"
+}, {
+"base": "HBoxContainer",
+"class": "UserRow",
+"language": "GDScript",
+"path": "res://interface/UserRow.gd"
+} ]
 _global_script_class_icons={
-
+"Player": "",
+"ScoreRow": "",
+"UserRow": ""
 }
 
 [application]
 
 config/name="SpaceShooter"
-run/main_scene="res://Scenes/SceneObj/MenuScene.tscn"
+run/main_scene="res://Scenes/SceneObj/GameScene.tscn"
 config/icon="res://Sprites/ss_icon.png"
+
+[autoload]
+
+Firebase="*res://firebase/Firebase.gd"
 
 [display]
 
 window/size/width=640
 window/size/height=360
+window/Firebase="*res://firebase/Firebase.gd"
 
 [input]
 
@@ -52,6 +74,11 @@ ui_down={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+fire={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
 

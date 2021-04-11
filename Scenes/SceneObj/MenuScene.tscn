@@ -52,7 +52,7 @@ texture = ExtResource( 6 )
 margin_right = 330.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.913725, 0.180392, 0.180392, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Space Shooter"
 align = 1
 
@@ -109,5 +109,6 @@ limit_top = 0
 limit_right = 0
 limit_bottom = 0
 editor_draw_screen = false
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/VBoxContainer2/PlayBtn" to="." method="_on_PlayBtn_mouse_entered"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/VBoxContainer2/PlayBtn" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/VBoxContainer2/ExitBtn" to="." method="_on_Exit_pressed"]

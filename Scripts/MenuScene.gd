@@ -25,3 +25,4 @@ func _process(delta):
 		$Background.global_position.y = MIN_Y
 	elif ($Background.global_position.y > MAX_Y):
 		$Background.global_position.y = MAX_Y
+
