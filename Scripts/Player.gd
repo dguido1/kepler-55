@@ -9,12 +9,12 @@ export (PackedScene) var BulletScene
 var plBullet := preload("res://Bullet/Scenes/Bullet.tscn")
 onready var firingPositions := $FiringPositions
 onready var fireDelayTimer := $FireDelayTimer
-export var fireDelay: float = 0.1
+export var fireDelay: float = 0.25
 
 var _screen_size = Vector2(640.0, 360.0)
 var _player_effect = 0
 var _can_play = true
-
+var _rng = RandomNumberGenerator.new()
 # signal destroy
 # signal load_next_step
 
@@ -27,6 +27,8 @@ func _on_attack():
 	# Check if shooting
 	if Input.is_action_pressed("fire") and fireDelayTimer.is_stopped():
 		fireDelayTimer.start(fireDelay)
+		$FireSound.set_pitch_scale(_rng.randf_range(0.95,1.05))
+		$FireSound.play()
 		for child in firingPositions.get_children():
 			var bullet := plBullet.instance()
 			bullet.global_position = child.global_position

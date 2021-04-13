@@ -42,8 +42,8 @@ Firebase="*res://firebase/Firebase.gd"
 
 [display]
 
-window/size/width=640
-window/size/height=360
+window/size/width=1280
+window/size/height=720
 window/Firebase="*res://firebase/Firebase.gd"
 
 [input]
