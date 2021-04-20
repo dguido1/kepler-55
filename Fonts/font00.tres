@@ -4,5 +4,5 @@
 
 [resource]
 resource_name = "Rocket"
-size = 36
+size = 30
 font_data = ExtResource( 1 )

@@ -11,8 +11,9 @@ height = 31.3584
 [node name="EnemyBullet" type="Area2D" groups=[
 "EnemyBullet",
 ]]
+scale = Vector2( 1, 1.442 )
 script = ExtResource( 1 )
-speed = -500.0
+speed = -300.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color( 0.854902, 0.854902, 0.854902, 0.709804 )
@@ -32,4 +33,5 @@ shape = SubResource( 1 )
 position = Vector2( 0.0563489, 0 )
 rotation = 1.5708
 texture = ExtResource( 2 )
+[connection signal="area_entered" from="." to="." method="_on_EnemyBullet_area_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

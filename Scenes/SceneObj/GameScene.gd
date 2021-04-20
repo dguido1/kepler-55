@@ -47,17 +47,36 @@ func _ready():
 func _process(_delta):
 	
 	if is_game_over:
-		ui_handler.visible = true
+		var game_over_timer = ui_handler.get_node("GameOverTimer")
+
+		if game_over_timer.is_stopped():
+			var player = get_node("Player")
+			var kill_str = ""
+			var dest_str = ""
+			if player.num_enem_kill > 1 or player.num_enem_kill == 0:
+				kill_str = "enemies"
+			else:
+				kill_str = "enemy"
+			if player.num_met_dest > 1 or player.num_met_dest == 0:
+				dest_str = "meteors"
+			else:
+				dest_str = "meteor"
+				
+			var results_str = "You killed " + str(player.num_enem_kill) + " " + kill_str + " and destroyed " + str(player.num_met_dest) + " " + dest_str + "!" 
+			var results_label = ui_handler.get_node("CenterContainer").get_node("VBoxContainer").get_node("ResultsLabel")
+			results_label.text = results_str
+			ui_handler.visible = true
+
 	else:
 		ui_handler.visible = false
 	
-	if meteor_spawn_timer.is_stopped():				# Add a meteor
-		meteor_spawn_timer.start(meteor_spawn_delay)
-		_add_meteor()
-	
-	if enemy_spawn_timer.is_stopped():				# Add an enemy
-		enemy_spawn_timer.start(enemy_spawn_delay)
-		_add_enemy()
+		if meteor_spawn_timer.is_stopped():				# Add a meteor
+			meteor_spawn_timer.start(meteor_spawn_delay)
+			_add_meteor()
+		
+		if enemy_spawn_timer.is_stopped():				# Add an enemy
+			enemy_spawn_timer.start(enemy_spawn_delay)
+			_add_enemy()
 	
 func _add_meteor():
 	var curr_meteor_idx = randi() % 4 + 1		    # Rand int between 1 and 4

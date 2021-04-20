@@ -1,7 +1,7 @@
 extends Area2D
 class_name Player
 
-export (int) var move_speed = 150
+export (int) var move_speed = 300
 export (PackedScene) var BulletScene
 # export (PackedScene) var Explosion_Scene :PackedScene
 
@@ -36,8 +36,12 @@ var color_idx = 0
 var player_piece_sprite00 = load("res://Sprites/playerShip1_damage1.png") 
 var player_piece_sprite01 = load("res://Sprites/playerShip1_damage2.png") 
 var player_piece_sprite02 = load("res://Sprites/playerShip1_damage3.png") 
-# 1. Start
-# Once when the object is created
+
+var num_enem_kill = 0
+
+var is_game_over = false
+var num_met_dest = 0
+
 func _ready():
 	_screen_size = get_viewport_rect().size
 	fire_particles.emitting = false
@@ -80,23 +84,29 @@ func isDead():
 	return curr_hp <= 0
 
 func die():
+	
 	get_parent().is_game_over = true
+	get_parent().get_node("UIHandler").get_node("GameOverTimer").start(2)
+	is_game_over = true
 	explode()
 	print("'Player' has died.\n")
 
 # Function Process
 # Run 60 times / sec
 func _process(_delta):
-	if isDead():			# Check for death
+	if isDead():			# Check for deathw
 		die()
 		
-	_on_move(_delta)
-	_restrict_move()
-	_on_attack()
-	_animate_player()
+	if not isDead() and get_parent().get_node("Player") != null:
+
+		if not is_game_over:
+			_restrict_move()
+			_on_attack()
+			_animate_player()
 	
 func _physics_process(delta):
-	if not isDead():
+	
+	if not isDead() and get_parent().get_node("Player") != null:
 		_on_move(delta)
 		
 func _animate_player():
@@ -186,9 +196,17 @@ func explode():
 
 	_spawn_asteroid_smalls(4)
 
-	get_parent().remove_child(self)
-	queue_free()
-	
+	visible = false
+	_play_explosion_sound()
+
+
+func _play_explosion_sound():
+	var explosion_sound = AudioStreamPlayer2D.new()
+	explosion_sound.stream = load("res://Audio/explosion.wav")
+	explosion_sound.pitch_scale = 1
+	explosion_sound.position = self.position
+	get_parent().add_child(explosion_sound)
+	explosion_sound.play(0)
 # Debug helper functions
 # ************************
 # ************************
@@ -199,10 +217,12 @@ func delete():
 	queue_free()
 
 func _on_Player_area_entered(area):
-	if area.is_in_group("monster") or area.is_in_group("Meteor"):
-		die()
-		area.die()
-	elif area.is_in_group("EnemyBullet"):
-		area.delete()
-		die()
+	if not get_parent().is_game_over:
+		if area.is_in_group("monster") or area.is_in_group("Meteor"):
+			die()
+			area.die()
+			
+		elif area.is_in_group("EnemyBullet"):
+			area.delete()
+			die()
 

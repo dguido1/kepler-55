@@ -14,7 +14,7 @@ var playerInArea: Player = null
 
 # *************************
 # Added 4-19 
-var max_hp = 5						# Unit max HP
+var max_hp = 10						# Unit max HP
 var curr_hp = max_hp				# Unit current HP
 var vel := Vector2(0, 0)
 var curr_dir := Vector2(0, 0)
@@ -49,6 +49,7 @@ func die():
 	if curr_hp != 0:
 		curr_hp = 0
 		
+	get_parent().get_node("Player").num_met_dest += 1
 	explode()
 	
 func damage(amount: int):

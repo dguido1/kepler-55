@@ -49,7 +49,7 @@ var rotationRate: float = 0
 
 # *************************
 # Added 4-19 
-var max_hp = 5						# Unit max HP
+var max_hp = 15						# Unit max HP
 var curr_hp = max_hp				# Unit current HP
 var vel := Vector2(0, 0)
 var curr_dir := Vector2(0, 0)
@@ -83,9 +83,11 @@ func _ready():
 # Function Process
 # Run 60 times / sec
 func _process(_delta):
+		
 	if isDead():			# Check for death
 		die()
-	else:
+	
+	elif not get_parent().is_game_over:
 		# Check if shooting
 		if fireDelayTimer.is_stopped():
 			fireDelayTimer.start(fireDelay)
@@ -108,7 +110,7 @@ func _process(_delta):
 			get_tree().current_scene.add_child(bullet)
 	
 func _physics_process(delta):
-	if not isDead():
+	if not isDead()	and not get_parent().is_game_over:
 		move(delta)	
 	
 func isDead():
@@ -118,6 +120,7 @@ func die():
 	if curr_hp != 0:
 		curr_hp = 0
 		
+	get_parent().get_node("Player").num_enem_kill += 1
 	explode()
 	print("'Monster' has died.\n")
 
@@ -125,7 +128,7 @@ func setrotation(new_transform):
 	# apply tweened x-vector of basis
 	self.transform.x = new_transform
 
-	# make x and y orthogonal and normalized
+	# make x and y orthogonal and  normalized
 	self.transform = self.transform.orthonormalized()
 	
 func move(delta):

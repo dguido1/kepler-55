@@ -11,7 +11,6 @@ height = 31.3584
 "bullet",
 ]]
 script = ExtResource( 1 )
-speed = 500.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
