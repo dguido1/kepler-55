@@ -15,14 +15,3 @@ func _on_Play_pressed():
 func _on_Exit_pressed():
 	get_tree().quit()
 	pass # Replace with function body.
-
-func _process(delta):
-	if ($Background.global_position.x < MIN_X):
-		$Background.global_position.x = MIN_X
-	elif ($Background.global_position.x > MAX_X):
-		$Background.global_position.x = MAX_X
-	if ($Background.global_position.y < MIN_Y):
-		$Background.global_position.y = MIN_Y
-	elif ($Background.global_position.y > MAX_Y):
-		$Background.global_position.y = MAX_Y
-

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Meteor.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/meteror_01.png" type="Texture" id=2]
+
+[node name="Meteor" type="Area2D" groups=[
+"Meteor",
+]]
+scale = Vector2( 0.3, 0.3 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 4.5502, -207.501, 127.346, -172.588, 211.78, -54.8561, 202.266, 84.8757, 127.346, 172.877, -3.46701, 209.742, -147.956, 194.877, -207.117, 57.0821, -214.046, -65.7602, -144.12, -161.514 )
+[connection signal="area_entered" from="." to="." method="_on_Meteor_area_entered"]

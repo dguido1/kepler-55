@@ -1,28 +1,93 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Sprites/player_ship.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Audio/LASER_BEAM_WAV.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sprites/player_sheet_02.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/explosion00.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/smoke_01.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 18.7573, 24.7289 )
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 99, 77, 99 )
 
-[node name="Player" type="Area2D"]
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 77, 99 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 198, 77, 99 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 77, 99, 77, 99 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "Stop",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "Left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "Right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "Straight",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 30.0823, 37.4965 )
+
+[node name="Player" type="Area2D" groups=[
+"Player",
+]]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.472473, 0 )
+[node name="SmokeParticles" type="CPUParticles2D" parent="."]
+modulate = Color( 0.796078, 0.796078, 0.796078, 0.917647 )
+position = Vector2( -10.494, -0.73 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 1 )
+lifetime = 1.1
+texture = ExtResource( 6 )
+scale_amount = 0.08
+scale_amount_random = 0.07
+
+[node name="FireParticles" type="CPUParticles2D" parent="."]
+modulate = Color( 1, 1, 1, 0.733333 )
+position = Vector2( -21.073, -0.772 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+lifetime = 0.5
+texture = ExtResource( 5 )
+scale_amount = 0.35
+scale_amount_random = 0.4
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 5 )
+animation = "Stop"
+speed_scale = 0.01
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-
-[node name="BulletPosition" type="Position2D" parent="."]
-position = Vector2( 15.1838, 0 )
+visible = false
+shape = SubResource( 6 )
 
 [node name="FiringPositions" type="Node2D" parent="."]
 
@@ -33,9 +98,10 @@ position = Vector2( 4.11605, -23.2339 )
 position = Vector2( 3.82387, 23.4127 )
 
 [node name="FireDelayTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.15
 one_shot = true
 
 [node name="FireSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -5.0
+[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
