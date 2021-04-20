@@ -3,7 +3,7 @@
 ### A space adventure
 #### &nbsp;&nbsp;&nbsp;&nbsp;Made by [@dguido1](https://github.com/dguido1), [@ecorona9](https://github.com/ecorona9) & [@quyen-tsai](https://github.com/quyen-tsai)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;Built with [GoDot](https://godotengine.org). An open source game engine. 
-#### &nbsp;&nbsp;&nbsp;&nbsp;at [***California State University Fullerton***](http://www.fullerton.edu/)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Spring 21'
+#### &nbsp;&nbsp;&nbsp;&nbsp;For CPSC 254 at [***California State University Fullerton***](http://www.fullerton.edu/)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Spring 21'
 
 ***
 <br/><br/>
