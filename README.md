@@ -7,9 +7,9 @@
 
 ***
 <br/><br/>
-![ezgif com-optimize](https://github.com/dguido1/kepler-55/blob/main/demos/kepler-55-demo.gif)
-![ezgif com-optimize](https://github.com/dguido1/kepler-55/blob/main/demos/menu.png)
-![ezgif com-optimize](https://github.com/dguido1/kepler-55/blob/main/demos/game_over.png)
+![ezgif com-optimize](https://github.com/dguido1/kepler-55/blob/main/kepler-55/demos/kepler-55-demo.gif)
+![ezgif com-optimize](https://github.com/dguido1/kepler-55/blob/main/kepler-55/demos/menu.png)
+![ezgif com-optimize](https://github.com/dguido1/kepler-55/blob/main/kepler-55/demos/game_over.png)
 <br>
 
 ***
