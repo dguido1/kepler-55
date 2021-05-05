@@ -39,7 +39,7 @@ export (PackedScene) var BulletScene
 # export (PackedScene) var Explosion_Scene :PackedScene
 
 #Bullet Additions
-var plBullet := preload("res://Bullet/Scenes/EnemyBullet.tscn")
+var plBullet := preload("res://Scenes/Obj/EnemyBullet.tscn")
 onready var firingPosition := $Sprite/FiringPosition
 onready var fireDelayTimer := $FireDelayTimer
 export var fireDelay: float =3

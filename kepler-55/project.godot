@@ -13,27 +13,15 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Scripts/Player.gd"
-}, {
-"base": "HBoxContainer",
-"class": "ScoreRow",
-"language": "GDScript",
-"path": "res://interface/ScoreRow.gd"
-}, {
-"base": "HBoxContainer",
-"class": "UserRow",
-"language": "GDScript",
-"path": "res://interface/UserRow.gd"
 } ]
 _global_script_class_icons={
-"Player": "",
-"ScoreRow": "",
-"UserRow": ""
+"Player": ""
 }
 
 [application]
 
 config/name="Kepler55"
-run/main_scene="res://Scenes/SceneObj/GameScene.tscn"
+run/main_scene="res://Scenes/SceneObj/MenuScene.tscn"
 config/icon="res://Sprites/ss_icon.png"
 
 [autoload]

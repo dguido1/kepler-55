@@ -64,4 +64,5 @@ position = Vector2( 287.262, 287.262 )
 rotation = 1.5708
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 3 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

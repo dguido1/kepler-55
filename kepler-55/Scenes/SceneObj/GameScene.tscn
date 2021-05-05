@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Obj/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/GameUIHandler.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Obj/ParticleBackground.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/SceneObj/GameScene.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/GameScene.gd" type="Script" id=6]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource( 6 )
@@ -124,5 +124,6 @@ text = "Home"
 [node name="GameOverTimer" type="Timer" parent="UIHandler"]
 wait_time = 2.0
 one_shot = true
+
 [connection signal="pressed" from="UIHandler/CenterContainer/VBoxContainer/PlayAgainButton" to="UIHandler" method="_on_PlayAgainButton_pressed"]
 [connection signal="pressed" from="UIHandler/CenterContainer/VBoxContainer/HomeButton" to="UIHandler" method="_on_HomeButton_pressed"]

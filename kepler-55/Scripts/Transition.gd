@@ -8,7 +8,7 @@ var game_scene = "res://Scenes/SceneObj/GameScene.tscn"
 func _ready():
 	$CenterContainer/VBoxContainer/Stage.text = STAGE 
 	#+ str(AutoLoad._stage)
-	$CenterContainer/VBoxContainer/Name.text = "Welcome to Space Shooter!"
+	$CenterContainer/VBoxContainer/Name.text = "Welcome to Kepler 55!"
 	#AutoLoad._stage_name
 
 func _on_Timer_timeout():
