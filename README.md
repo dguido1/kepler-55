@@ -51,8 +51,8 @@
 
 ## Demo
 
-### &nbsp;&nbsp;&nbsp; Can you conquer space!?
 ![ezgif com-optimize](https://github.com/dguido1/kepler-55/blob/main/kepler-55/demos/kepler-55-demo.gif)
+### &nbsp;&nbsp;&nbsp; Can you conquer space!?
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monster & meteor creation is dynamic, meaning speed and size is random<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Explosions and enemy projectiles scale with the corresponding parent object they spawn from
 
 <br>
