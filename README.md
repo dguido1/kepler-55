@@ -29,7 +29,7 @@
 
 ## Instructions (Windows)
 
-#### &nbsp;&nbsp;&nbsp; 1. &nbsp; Download [`kepler-55.exe`](/exports/kepler-55.exe), the latest version of the game
+#### &nbsp;&nbsp;&nbsp; 1. &nbsp; Download [`kepler-55.exe`](/Exports/kepler-55.exe), the latest version of the game
 #### &nbsp;&nbsp;&nbsp; 2. &nbsp; Locate & open the file
 
 
