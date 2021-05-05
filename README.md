@@ -5,9 +5,6 @@
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;Built with [GoDot](https://godotengine.org), an open source game engine
 #### &nbsp;&nbsp;&nbsp;&nbsp;For CPSC 254 at [***California State University Fullerton***](http://www.fullerton.edu/)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Spring 21'
 
-***
-<br/><br/>
-
 ---
 <br>
 
