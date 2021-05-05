@@ -57,15 +57,13 @@
 
 <br>
 
-### &nbsp;&nbsp;&nbsp; Start your adventure now!
 ![ezgif com-optimize](https://github.com/dguido1/kepler-55/blob/main/kepler-55/demos/menu.png)
-
+### &nbsp;&nbsp;&nbsp; Start your adventure now!
 
 <br>
 
-### &nbsp;&nbsp;&nbsp; Try again!
 ![ezgif com-optimize](https://github.com/dguido1/kepler-55/blob/main/kepler-55/demos/game_over.png)
-
+### &nbsp;&nbsp;&nbsp; Try again!
 
 ---
 <br>
