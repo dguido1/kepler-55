@@ -66,11 +66,12 @@
 * Four enemy colors: green, blue, red, orange 
 
 **Explosions:**
-* Enemies and meteors now explode on death ○ Explosion sizes (enemy and meteor) are now dynamic Scales with enemy or meteor random initialization size. A bigger random size during initialization causes a greater chance of the explosion containing larger scaled pieces
+* Enemies and meteors now explode on death.
+* Explosion sizes (enemy and meteor) are now dynamic Scales with enemy or meteor random initialization size. A bigger random size during initialization causes a greater chance of the explosion containing larger scaled pieces
 * Enemy explosion colors are now dynamic, matching their parent’s random initialization color index: 1, 2, 3 or 4
 <br><br>
 ![ezgif com-gif-maker(8)](https://user-images.githubusercontent.com/47490318/136461152-c3008db2-cb7d-42b7-aee8-9976f025e5d9.gif)
-     * *Monster & meteor creation is dynamic, meaning speed and size is random. Explosions and enemy projectiles scale with the corresponding parent object they spawn from*<br><br>
+<br><br>
 
 ### Main Menu 
 ![main-menu](https://user-images.githubusercontent.com/47490318/136454300-77004cd4-301b-491a-9b10-d44a87960c2e.gif)
