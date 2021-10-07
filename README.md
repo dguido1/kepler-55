@@ -15,7 +15,8 @@
     * [Player](#player)
     * [Enemies](#enemies)
     * [Meteors and Enemies](#meteors-and-enemies)
-    * [Main Menu](#main-menu)
+    * [Main Menu Screen](#main-menu-screen)
+    * [Game Over Screen](#game-over-screen)
   * [Demo](#demo)
   * [Credits](#credits)
 ***
@@ -73,24 +74,18 @@
 ![ezgif com-gif-maker(8)](https://user-images.githubusercontent.com/47490318/136461152-c3008db2-cb7d-42b7-aee8-9976f025e5d9.gif)
 <br><br>
 
-### Main Menu 
+### Main Menu Screen
 ![main-menu](https://user-images.githubusercontent.com/47490318/136454300-77004cd4-301b-491a-9b10-d44a87960c2e.gif)
 
+### Game Over Screen
+![11](https://user-images.githubusercontent.com/47490318/136463226-162126e1-eb4f-4ea0-9ef8-d7c85bea03b6.png)
+
 ***
-<br>
 
 ## Demo
-
-![ezgif com-optimize](https://github.com/dguido1/kepler-55/blob/main/kepler-55/demos/kepler-55-demo.gif)
-### &nbsp;&nbsp;&nbsp; Can you conquer space!?
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monster & meteor creation is dynamic, meaning speed and size is random<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Explosions and enemy projectiles scale with the corresponding parent object they spawn from
-
-### &nbsp;&nbsp;&nbsp; Game over, try again!
-![ezgif com-optimize](https://github.com/dguido1/kepler-55/blob/main/kepler-55/demos/game_over.png)
+Gameplay Demo (Youtube): https://www.youtube.com/watch?v=C5uO5YPuJRQ
 
 ---
-<br>
-
 
 ## Credits
 <br>
